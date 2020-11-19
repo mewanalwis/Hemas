@@ -1,0 +1,102 @@
+{
+	"name": "RDSalesCommissionScheme",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "CommissionSchemeType",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCriteriaLevel",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCriteria",
+				"type": "varchar"
+			},
+			{
+				"name": "DateFrom",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DateTo",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CommissionSchemeMode",
+				"type": "char"
+			},
+			{
+				"name": "ApplicationMethod",
+				"type": "char"
+			},
+			{
+				"name": "CalculationMethod",
+				"type": "char"
+			},
+			{
+				"name": "QualifierType1",
+				"type": "char"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "SchemeName",
+				"type": "varchar"
+			},
+			{
+				"name": "Remarks",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "SalesCommissionScheme"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "RDCurrentSerialBatchDayEnd_2020_Q2_08",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RDDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "RDCurrentSerialBatchDayEnd"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "RD_CurrentSerialBatchDayEnd_2020_Q2_08.csv",
+				"folderPath": "2000/RD/2020/Q2/August",
+				"fileSystem": "fmcg-data-repository"
+			},
+			"columnDelimiter": "~",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": ""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

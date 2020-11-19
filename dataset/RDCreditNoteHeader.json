@@ -1,0 +1,323 @@
+{
+	"name": "RDCreditNoteHeader",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "CreditNoteNo",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "InvoiceNo",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "SalesCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "CreditDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RetailerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "RetailerCodeSon",
+				"type": "char"
+			},
+			{
+				"name": "GoodsValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalTaxValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalVATValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalBTTValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalNBTValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalOtherTAXValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ExtraChargesDesc1",
+				"type": "varchar"
+			},
+			{
+				"name": "ExtraChargeValue1",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ExtraChargesDesc2",
+				"type": "varchar"
+			},
+			{
+				"name": "ExtraChargeValue2",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CarriageCredReason",
+				"type": "char"
+			},
+			{
+				"name": "CarriageAmount",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "Extra1CredReason",
+				"type": "char"
+			},
+			{
+				"name": "Extra2CredReason",
+				"type": "char"
+			},
+			{
+				"name": "LineDiscountTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "HeaderDiscountTotal",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ReplicationStatus",
+				"type": "char"
+			},
+			{
+				"name": "ReplicatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "ReplicatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ReplicationBundle",
+				"type": "varchar"
+			},
+			{
+				"name": "ReferenceInvoiceNo",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditNoteReference",
+				"type": "varchar"
+			},
+			{
+				"name": "UserReference",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdateStock",
+				"type": "char"
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "CancellationReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "CancellationDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CancelRetunGracePeriod",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "CreditEntryType",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "UserProfile",
+				"type": "char"
+			},
+			{
+				"name": "OrderNumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GoodsValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalTaxValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalVATValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalBTTValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalNBTValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalOtherTAXValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "LineDiscountTotalCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "HeaderDiscountTotalCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ExtraChargeValue1Cur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ExtraChargeValue2Cur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CarriageAmountCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "RouteCode",
+				"type": "char"
+			},
+			{
+				"name": "StockTerritory",
+				"type": "char"
+			},
+			{
+				"name": "DistributorCode",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "CreditNoteHeader"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

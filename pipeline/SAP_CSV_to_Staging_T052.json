@@ -1,0 +1,372 @@
+{
+	"name": "SAP_CSV_to_Staging_T052",
+	"properties": {
+		"activities": [
+			{
+				"name": "SAP_CSV_to_Staging_T052",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "MANDT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MANDT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZTERM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZTERM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZTAGG",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZTAGG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZDART",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZDART",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZFAEL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZFAEL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZMONA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZMONA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZTAG1",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZTAG1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZPRZ1",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "ZPRZ1",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ZTAG2",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZTAG2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZPRZ2",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "ZPRZ2",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ZTAG3",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZTAG3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSTG1",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZSTG1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSMN1",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZSMN1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSTG2",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZSTG2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSMN2",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZSMN2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSTG3",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZSTG3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSMN3",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZSMN3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XZBRV",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "XZBRV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSCHF",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZSCHF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XCHPB",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "XCHPB",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TXN08",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "TXN08",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZLSCH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZLSCH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XCHPM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "XCHPM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KOART",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KOART",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XSPLT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "XSPLT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XSCRC",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "XSCRC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDSTG_SAP_T052_Pay_Terms",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "RDSTG_SAP_T052_Pay_Terms",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "SAP_STG"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-10-28T16:32:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

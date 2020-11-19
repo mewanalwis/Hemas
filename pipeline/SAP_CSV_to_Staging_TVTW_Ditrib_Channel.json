@@ -1,0 +1,86 @@
+{
+	"name": "SAP_CSV_to_Staging_TVTW_Ditrib_Channel",
+	"properties": {
+		"activities": [
+			{
+				"name": "SAP_CSV_to_Staging_TVTW_Ditrib_Channel",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						}
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "MANDT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MANDT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VTWEG",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "VTWEG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "PQ_Source_SAP_TVTW_Ditrib_Channel",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "RDSTG_SAP_TVTW_Distrib_Channel",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "SAP_STG"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-10-21T15:49:13Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

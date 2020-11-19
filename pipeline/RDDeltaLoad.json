@@ -1,0 +1,86 @@
+{
+	"name": "RDDeltaLoad",
+	"properties": {
+		"activities": [
+			{
+				"name": "load_dimentions",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "load_classifications",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "DimentionsSourcetoDW",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": false
+				}
+			},
+			{
+				"name": "load_facts",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "load_dimentions",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "FactSourcetoDW",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": false
+				}
+			},
+			{
+				"name": "load_classifications",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "SourcetoStaging",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "load_inventory",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "load_facts",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "StockSourcetoDW",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "DWPipelines"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-11-04T10:13:25Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

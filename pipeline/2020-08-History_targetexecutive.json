@@ -1,0 +1,292 @@
+{
+	"name": "2020-08-History_targetexecutive",
+	"properties": {
+		"activities": [
+			{
+				"name": "rep_target",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "RecID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RecID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "Year",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Year",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Period",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Period",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Week",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Week",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "ExecutiveCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ExecutiveCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesTargetQty",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RDSalesTargetQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesTargetVolume",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RDSalesTargetVolume",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesTargetValue",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RDSalesTargetValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesAcheivedQty",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RDSalesAcheivedQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesAcheivedVolume",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RDSalesAcheivedVolume",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesAcheivedValue",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RDSalesAcheivedValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedBy",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CreatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdatedBy",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UpdatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdatedOn",
+									"type": "DateTime",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UpdatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeStamp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TimeStamp",
+									"physicalType": "timestamp"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDTargetExecutive_All",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "RDTargetExecutive_Staging",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "HistoryData"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-10-17T07:21:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,684 @@
+{
+	"name": "AdHocDiscountLoads",
+	"properties": {
+		"activities": [
+			{
+				"name": "load product type discount",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT \n\t--D.*,\n\tD.RecID,\n\tD.BusinessUnit,\n\tD.TerritoryCode,\n\tL.RouteCode,\n\tL.RetailerCode,\n\tD.ExecutiveCode,\n\tH.InvoiceDate,\n\tD.SalesCategoryCode,\n\tD.InvoiceNo,\n\tD.ProductCode,\n        IL.U1MovementQuantity As PurchaseQty,\n\tD.DiscountValue,\n\tD.FreeProductCode,\n\tD.FreeIssueValue,\n\tD.FreeIssueQty,\n\tD.FreeIssuePrecentage,\n\tT.ProductCriteria, \n\tT.Qualifier1, \n\tT.TradeScheme,\n\tconvert(varchar,cast(((D.FreeIssueQty/T.TradeScheme) * T.Qualifier1) as int))+':'+convert(varchar,cast(D.FreeIssueQty as int)) as Slab,\n H.TradeSchemeRecID,\nH.DiscountType\nFROM RD.SalesInvoiceHeaderDiscount D\ninner join RD.SalesInvoiceDiscount H on \n    D.RecID = H.RecID  and \n    D.FreeProductCode = H.DiscountedProductCode and\n    D.FreeIssueQty = H.DiscountQty\nLEFT JOIN RD.TradeSchemeDetail T on H.TradeSchemeRecID = T.RecID\nLEFT JOIN RD.SalesInvoiceHeader L on\n\tL.InvoiceNo = D.InvoiceNo and\n\tL.SalesCategoryCode = D.SalesCategoryCode and\n\tL.TerritoryCode = D.TerritoryCode \nLEFT JOIN RD.SalesInvoiceLine IL ON \n        IL.InvoiceNo = L.InvoiceNo and\n\tIL.SalesCategoryCode = L.SalesCategoryCode and\n\tIL.TerritoryCode = L.TerritoryCode AND\n        IL.InvoiceLineNo = D.InvoiceLineNo\nWHERE  convert(varchar, H.InvoiceDate, 23) BETWEEN '2020-10-01' AND '2020-11-12' AND H.DiscountType = 'H' ",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "RecID",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "RecID",
+									"type": "Int64",
+									"physicalType": "bigint"
+								}
+							},
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "RouteCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "RouteCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "RetailerCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RetailerCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ExecutiveCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "ExecutiveCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "SalesCategoryCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "SalesCategoryCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "InvoiceNo",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "InvoiceNo",
+									"type": "Int64",
+									"physicalType": "bigint"
+								}
+							},
+							{
+								"source": {
+									"name": "InvoiceDate",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "InvoiceDate",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PurchaseQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "PurchasedQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "DiscountValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "FreeProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "FreeProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FreeIssueValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "FreeIssueValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "FreeIssueQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "FreeIssueQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "FreeIssuePrecentage",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "FreeIssuePrecentage",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCriteria",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCriteria",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Qualifier1",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "Qualifier1",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "TradeScheme",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "TradeScheme",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Slab",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Slab",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountType",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "DiscountType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TradeSchemeRecID",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "TradeSchemeRecID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDSalesInvoiceDiscount",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "FactProductDicount",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "load product discount",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "load product type discount",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT \n\t--D.*,\n\tD.RecID,\n\tD.BusinessUnit,\n\tD.TerritoryCode,\n\tH.RouteCode,\n\tL.RetailerCode,\n\tD.ExecutiveCode,\n\tD.SalesCategoryCode,\n\tD.InvoiceNo,\n\tD.InvoiceDate,\n\t'ALL' As DiscountCriteria,\n\tD.DiscountValue,\n\tD.DiscountQty,\n\tD.DiscountedProductCode,\n\tD.OriginalDiscountProduct,\n\tD.OriginalDiscountQty,\n\tD.OriginalDiscountValue,\n\tD.Price,\n\tD.Price * D.DiscountQty As FreeIssueValue,\n\tL.ProductCode, \n        L.U1MovementQuantity as PurchaseQty,\n\tT.Qualifier1, \n\tT.TradeScheme,\n\tconvert(varchar,cast(((D.DiscountQty/T.TradeScheme) * T.Qualifier1) as int))+':'+convert(varchar,cast(D.DiscountQty as int)) as Slab,\nD.TradeSchemeRecID,\n\tD.DiscountType\nFROM RD.SalesInvoiceDiscount D\nINNER join RD.TradeSchemeDetail T on D.TradeSchemeRecID = T.RecID\nLEFT join RD.SalesInvoiceLine L on\n\tL.InvoiceNo = D.InvoiceNo and\n\tL.SalesCategoryCode = D.SalesCategoryCode and\n\tL.TerritoryCode = D.TerritoryCode AND\n\tL.InvoiceLineNo = D.InvoiceLineNumber\nLEFT JOIN RD.SalesInvoiceHeader H ON\n\tH.InvoiceNo = D.InvoiceNo and\n\tH.SalesCategoryCode = D.SalesCategoryCode and\n\tH.TerritoryCode = D.TerritoryCode\nWHERE convert(varchar, D.InvoiceDate, 23) BETWEEN '2020-10-01' AND '2020-11-12' AND D.DiscountType = 'L'",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "RecID",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "RecID",
+									"type": "Int64",
+									"physicalType": "bigint"
+								}
+							},
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "RouteCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "RouteCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "RetailerCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RetailerCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ExecutiveCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "ExecutiveCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "SalesCategoryCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "SalesCategoryCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "InvoiceNo",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "InvoiceNo",
+									"type": "Int64",
+									"physicalType": "bigint"
+								}
+							},
+							{
+								"source": {
+									"name": "InvoiceDate",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "InvoiceDate",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PurchaseQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "PurchasedQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "DiscountValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountedProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "FreeProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FreeIssueValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 27
+								},
+								"sink": {
+									"name": "FreeIssueValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "FreeIssueQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountCriteria",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCriteria",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Qualifier1",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "Qualifier1",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "TradeScheme",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "TradeScheme",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Slab",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Slab",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DiscountType",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "DiscountType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TradeSchemeRecID",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "TradeSchemeRecID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDSalesInvoiceDiscount",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "FactProductDicount",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "DWPipelines"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-11-12T16:39:37Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

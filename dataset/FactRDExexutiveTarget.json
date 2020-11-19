@@ -1,0 +1,96 @@
+{
+	"name": "FactRDExexutiveTarget",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_DWH",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DWDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TargetMonth",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Year",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Period",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Week",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "RDSalesTargetQty",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesTargetValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesTargetVolume",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesAcheivedQty",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesAcheivedValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesAcheivedVolume",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "Fact",
+			"table": "ExecutiveTarget"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

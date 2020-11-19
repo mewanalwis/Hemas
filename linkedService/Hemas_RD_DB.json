@@ -1,0 +1,16 @@
+{
+	"name": "Hemas_RD_DB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=10.1.92.204;initial catalog=XONTUSERVENTURA_ORG;user id=BIUser",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwMGYyOTUyMi03NGRkLTRmZjEtYWYzNS03NWZkODI4ZDgyZDIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "rdintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

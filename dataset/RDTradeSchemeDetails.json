@@ -1,0 +1,176 @@
+{
+	"name": "RDTradeSchemeDetails",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TradeSchemeGroup",
+				"type": "char"
+			},
+			{
+				"name": "TradeSchemeType",
+				"type": "char"
+			},
+			{
+				"name": "ProductCriteriaLevel",
+				"type": "char"
+			},
+			{
+				"name": "ProductCriteria",
+				"type": "varchar"
+			},
+			{
+				"name": "RetailerCriteriaLevel",
+				"type": "char"
+			},
+			{
+				"name": "RetailerCriteria",
+				"type": "varchar"
+			},
+			{
+				"name": "PaymentMethodCode",
+				"type": "char"
+			},
+			{
+				"name": "QualifierType1",
+				"type": "char"
+			},
+			{
+				"name": "Qualifier1",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "QualifierType2",
+				"type": "char"
+			},
+			{
+				"name": "Qualifier2",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "JoinLogic",
+				"type": "char"
+			},
+			{
+				"name": "DateFrom",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DateTo",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TradeSchemeMode",
+				"type": "char"
+			},
+			{
+				"name": "TradeScheme",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ApplicationMethod",
+				"type": "char"
+			},
+			{
+				"name": "CalculationMethod",
+				"type": "char"
+			},
+			{
+				"name": "Reference",
+				"type": "char"
+			},
+			{
+				"name": "CompanyContribution",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TradeSchemeUpperLimit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "DiscountSchemeCode",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "GiftFlag",
+				"type": "char"
+			},
+			{
+				"name": "TradeSchemeCode",
+				"type": "char"
+			},
+			{
+				"name": "DiscountLevel",
+				"type": "char"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "TradeSchemeDetail"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

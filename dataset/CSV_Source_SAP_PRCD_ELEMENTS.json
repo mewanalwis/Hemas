@@ -1,0 +1,429 @@
+{
+	"name": "CSV_Source_SAP_PRCD_ELEMENTS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HemasGroupDLStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SAP_Data_Live"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "PRCD_ELEMENTS_SD_2019.csv",
+				"folderPath": "Holdings/Hemas_Group/SAP_Common/2019",
+				"fileSystem": "hemasgroup-data-repository"
+			},
+			"columnDelimiter": "文",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": ""
+		},
+		"schema": [
+			{
+				"name": "RCLNT",
+				"type": "String"
+			},
+			{
+				"name": "RLDNR",
+				"type": "String"
+			},
+			{
+				"name": "RBUKRS",
+				"type": "String"
+			},
+			{
+				"name": "GJAHR",
+				"type": "String"
+			},
+			{
+				"name": "BELNR",
+				"type": "String"
+			},
+			{
+				"name": "DOCLN",
+				"type": "String"
+			},
+			{
+				"name": "RYEAR",
+				"type": "String"
+			},
+			{
+				"name": "RRCTY",
+				"type": "String"
+			},
+			{
+				"name": "RMVCT",
+				"type": "String"
+			},
+			{
+				"name": "VORGN",
+				"type": "String"
+			},
+			{
+				"name": "VRGNG",
+				"type": "String"
+			},
+			{
+				"name": "BTTYPE",
+				"type": "String"
+			},
+			{
+				"name": "AWTYP",
+				"type": "String"
+			},
+			{
+				"name": "AWSYS",
+				"type": "String"
+			},
+			{
+				"name": "AWORG",
+				"type": "String"
+			},
+			{
+				"name": "AWREF",
+				"type": "String"
+			},
+			{
+				"name": "AWITEM",
+				"type": "String"
+			},
+			{
+				"name": "AWITGRP",
+				"type": "String"
+			},
+			{
+				"name": "SUBTA",
+				"type": "String"
+			},
+			{
+				"name": "XREVERSING",
+				"type": "String"
+			},
+			{
+				"name": "XREVERSED",
+				"type": "String"
+			},
+			{
+				"name": "XTRUEREV",
+				"type": "String"
+			},
+			{
+				"name": "AWTYP_REV",
+				"type": "String"
+			},
+			{
+				"name": "AWORG_REV",
+				"type": "String"
+			},
+			{
+				"name": "AWREF_REV",
+				"type": "String"
+			},
+			{
+				"name": "SUBTA_REV",
+				"type": "String"
+			},
+			{
+				"name": "XSETTLING",
+				"type": "String"
+			},
+			{
+				"name": "XSETTLED",
+				"type": "String"
+			},
+			{
+				"name": "PREC_AWTYP",
+				"type": "String"
+			},
+			{
+				"name": "PREC_AWORG",
+				"type": "String"
+			},
+			{
+				"name": "PREC_AWREF",
+				"type": "String"
+			},
+			{
+				"name": "PREC_AWITEM",
+				"type": "String"
+			},
+			{
+				"name": "PREC_SUBTA",
+				"type": "String"
+			},
+			{
+				"name": "                     PREC_AWMULT",
+				"type": "String"
+			},
+			{
+				"name": "XSECONDARY",
+				"type": "String"
+			},
+			{
+				"name": "RTCUR",
+				"type": "String"
+			},
+			{
+				"name": "RWCUR",
+				"type": "String"
+			},
+			{
+				"name": "RHCUR",
+				"type": "String"
+			},
+			{
+				"name": "RKCUR",
+				"type": "String"
+			},
+			{
+				"name": "ROCUR",
+				"type": "String"
+			},
+			{
+				"name": "RVCUR",
+				"type": "String"
+			},
+			{
+				"name": "RBCUR",
+				"type": "String"
+			},
+			{
+				"name": "RCCUR",
+				"type": "String"
+			},
+			{
+				"name": "RDCUR",
+				"type": "String"
+			},
+			{
+				"name": "RECUR",
+				"type": "String"
+			},
+			{
+				"name": "RFCUR",
+				"type": "String"
+			},
+			{
+				"name": "RGCUR",
+				"type": "String"
+			},
+			{
+				"name": "RCO_OCUR",
+				"type": "String"
+			},
+			{
+				"name": "RUNIT",
+				"type": "String"
+			},
+			{
+				"name": "RVUNIT",
+				"type": "String"
+			},
+			{
+				"name": "RRUNIT",
+				"type": "String"
+			},
+			{
+				"name": "QUNIT1",
+				"type": "String"
+			},
+			{
+				"name": "QUNIT2",
+				"type": "String"
+			},
+			{
+				"name": "QUNIT3",
+				"type": "String"
+			},
+			{
+				"name": "RACCT",
+				"type": "String"
+			},
+			{
+				"name": "RCNTR",
+				"type": "String"
+			},
+			{
+				"name": "PRCTR",
+				"type": "String"
+			},
+			{
+				"name": "RFAREA",
+				"type": "String"
+			},
+			{
+				"name": "RBUSA",
+				"type": "String"
+			},
+			{
+				"name": "KOKRS",
+				"type": "String"
+			},
+			{
+				"name": "SEGMENT",
+				"type": "String"
+			},
+			{
+				"name": "SCNTR",
+				"type": "String"
+			},
+			{
+				"name": "PPRCTR",
+				"type": "String"
+			},
+			{
+				"name": "SFAREA",
+				"type": "String"
+			},
+			{
+				"name": "SBUSA",
+				"type": "String"
+			},
+			{
+				"name": "RASSC",
+				"type": "String"
+			},
+			{
+				"name": "PSEGMENT",
+				"type": "String"
+			},
+			{
+				"name": "    TSL",
+				"type": "String"
+			},
+			{
+				"name": "    WSL",
+				"type": "String"
+			},
+			{
+				"name": " WSL2",
+				"type": "String"
+			},
+			{
+				"name": " WSL3",
+				"type": "String"
+			},
+			{
+				"name": "    HSL",
+				"type": "String"
+			},
+			{
+				"name": "    KSL",
+				"type": "String"
+			},
+			{
+				"name": "  OSL",
+				"type": "String"
+			},
+			{
+				"name": "  VSL",
+				"type": "String"
+			},
+			{
+				"name": "  BSL",
+				"type": "String"
+			},
+			{
+				"name": "  CSL",
+				"type": "String"
+			},
+			{
+				"name": "  DSL",
+				"type": "String"
+			},
+			{
+				"name": "  ESL",
+				"type": "String"
+			},
+			{
+				"name": "  FSL",
+				"type": "String"
+			},
+			{
+				"name": "  GSL",
+				"type": "String"
+			},
+			{
+				"name": " KFSL",
+				"type": "String"
+			},
+			{
+				"name": "KFSL2",
+				"type": "String"
+			},
+			{
+				"name": "KFSL3",
+				"type": "String"
+			},
+			{
+				"name": "  PSL",
+				"type": "String"
+			},
+			{
+				"name": " PSL2",
+				"type": "String"
+			},
+			{
+				"name": " PSL3",
+				"type": "String"
+			},
+			{
+				"name": " PFSL",
+				"type": "String"
+			},
+			{
+				"name": "PFSL2",
+				"type": "String"
+			},
+			{
+				"name": "PFSL3",
+				"type": "String"
+			},
+			{
+				"name": "CO_OSL",
+				"type": "String"
+			},
+			{
+				"name": "HSALK3",
+				"type": "String"
+			},
+			{
+				"name": "KSALK3",
+				"type": "String"
+			},
+			{
+				"name": "OSALK3",
+				"type": "String"
+			},
+			{
+				"name": "VSALK3",
+				"type": "String"
+			},
+			{
+				"name": "HSALKV",
+				"type": "String"
+			},
+			{
+				"name": "KSALKV",
+				"type": "String"
+			},
+			{
+				"name": "OSALKV",
+				"type": "String"
+			},
+			{
+				"name": "VSALKV",
+				"type": "String"
+			},
+			{
+				"name": "HPVPRS",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

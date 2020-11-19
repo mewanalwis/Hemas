@@ -1,0 +1,28 @@
+{
+	"name": "RDSalesOrderLine_2018",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RDDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "RDSalesOrderLine"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "RD_SalesOrderLine_2018.csv",
+				"folderPath": "2000/RD/2018",
+				"fileSystem": "fmcg-data-repository"
+			},
+			"columnDelimiter": "~",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

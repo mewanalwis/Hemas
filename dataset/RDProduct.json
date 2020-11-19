@@ -1,0 +1,615 @@
+{
+	"name": "RDProduct",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			},
+			{
+				"name": "Description2",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductGroup",
+				"type": "char"
+			},
+			{
+				"name": "UOM1",
+				"type": "char"
+			},
+			{
+				"name": "UOM2",
+				"type": "char"
+			},
+			{
+				"name": "ConversionFactor",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 25
+			},
+			{
+				"name": "PricedBy",
+				"type": "char"
+			},
+			{
+				"name": "BuyingPerQty",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 0
+			},
+			{
+				"name": "CurrentBuyingPrice",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "BuyerCode",
+				"type": "char"
+			},
+			{
+				"name": "MinStock",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "MaxStock",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "ReorderLevel",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "MinReOrderU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "MaxReOrderU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "StandardCost",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "StdCostperU1",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 0
+			},
+			{
+				"name": "AverageCost",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "OnOrder",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "AlternateSearch",
+				"type": "char"
+			},
+			{
+				"name": "Size1",
+				"type": "decimal",
+				"precision": 11,
+				"scale": 4
+			},
+			{
+				"name": "Size2",
+				"type": "decimal",
+				"precision": 11,
+				"scale": 4
+			},
+			{
+				"name": "Size3",
+				"type": "decimal",
+				"precision": 11,
+				"scale": 4
+			},
+			{
+				"name": "Size4",
+				"type": "decimal",
+				"precision": 11,
+				"scale": 4
+			},
+			{
+				"name": "Size1Unit",
+				"type": "char"
+			},
+			{
+				"name": "Size2Unit",
+				"type": "char"
+			},
+			{
+				"name": "Size3Unit",
+				"type": "char"
+			},
+			{
+				"name": "Size4Unit",
+				"type": "char"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "SalesOnOrder",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "TotalStockU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "TotalAllocatedU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "BackOrderU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "ForwardOrderU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "ReservedStockU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "PriceGroup",
+				"type": "char"
+			},
+			{
+				"name": "KitProductFlag",
+				"type": "char"
+			},
+			{
+				"name": "Location",
+				"type": "char"
+			},
+			{
+				"name": "SerialNumberRequired",
+				"type": "char"
+			},
+			{
+				"name": "ProductTypeCode",
+				"type": "char"
+			},
+			{
+				"name": "CountryOfOrigin",
+				"type": "char"
+			},
+			{
+				"name": "ProductType",
+				"type": "char"
+			},
+			{
+				"name": "LeadTime",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "RawMaterialProduct",
+				"type": "varchar"
+			},
+			{
+				"name": "RawMaterialRequiredU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "StockCategory",
+				"type": "char"
+			},
+			{
+				"name": "DestinationWarehouse",
+				"type": "char"
+			},
+			{
+				"name": "BatchProcessingFlag",
+				"type": "char"
+			},
+			{
+				"name": "NonStockItemFlag",
+				"type": "char"
+			},
+			{
+				"name": "CustomerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "CustomerCodeSon",
+				"type": "char"
+			},
+			{
+				"name": "RawMaterial",
+				"type": "char"
+			},
+			{
+				"name": "FinishedProduct",
+				"type": "char"
+			},
+			{
+				"name": "VATCode",
+				"type": "char"
+			},
+			{
+				"name": "SupplierCode",
+				"type": "char"
+			},
+			{
+				"name": "SupplierCodeSon",
+				"type": "char"
+			},
+			{
+				"name": "LotNumberRequired",
+				"type": "char"
+			},
+			{
+				"name": "AutoLotNumberGeneration",
+				"type": "char"
+			},
+			{
+				"name": "ExpiryDateRequired",
+				"type": "char"
+			},
+			{
+				"name": "PurchNominalCodeIn",
+				"type": "varchar"
+			},
+			{
+				"name": "PurchNominalCodeOut",
+				"type": "varchar"
+			},
+			{
+				"name": "SalesNominalCodeIn",
+				"type": "varchar"
+			},
+			{
+				"name": "SalesNominalCodeOut",
+				"type": "varchar"
+			},
+			{
+				"name": "SortSequence",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 0
+			},
+			{
+				"name": "MaximumRetailPrice",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "UserDefinedField1",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 0
+			},
+			{
+				"name": "UserDefinedField2",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "UserDefinedField3",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField4",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField5",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField6",
+				"type": "varchar"
+			},
+			{
+				"name": "ACode1",
+				"type": "char"
+			},
+			{
+				"name": "ACode2",
+				"type": "char"
+			},
+			{
+				"name": "ACode3",
+				"type": "char"
+			},
+			{
+				"name": "ACode4",
+				"type": "char"
+			},
+			{
+				"name": "ACode5",
+				"type": "char"
+			},
+			{
+				"name": "ACode6",
+				"type": "char"
+			},
+			{
+				"name": "ACode7",
+				"type": "char"
+			},
+			{
+				"name": "ACode8",
+				"type": "char"
+			},
+			{
+				"name": "ACode9",
+				"type": "char"
+			},
+			{
+				"name": "ACode10",
+				"type": "char"
+			},
+			{
+				"name": "ACode11",
+				"type": "char"
+			},
+			{
+				"name": "ACode12",
+				"type": "char"
+			},
+			{
+				"name": "ACode13",
+				"type": "char"
+			},
+			{
+				"name": "ACode14",
+				"type": "char"
+			},
+			{
+				"name": "ACode15",
+				"type": "char"
+			},
+			{
+				"name": "ACode16",
+				"type": "char"
+			},
+			{
+				"name": "ACode17",
+				"type": "char"
+			},
+			{
+				"name": "ACode18",
+				"type": "char"
+			},
+			{
+				"name": "ACode19",
+				"type": "char"
+			},
+			{
+				"name": "ACode20",
+				"type": "char"
+			},
+			{
+				"name": "InwardExpiredProduct",
+				"type": "char"
+			},
+			{
+				"name": "OutwardExpiredProduct",
+				"type": "char"
+			},
+			{
+				"name": "PUReturnExpiredProduct",
+				"type": "char"
+			},
+			{
+				"name": "SOReturnExpiredProduct",
+				"type": "char"
+			},
+			{
+				"name": "Overheads",
+				"type": "decimal",
+				"precision": 11,
+				"scale": 2
+			},
+			{
+				"name": "OverheadsPerU1",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 0
+			},
+			{
+				"name": "AvgCostPerU1",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 0
+			},
+			{
+				"name": "Weight",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			},
+			{
+				"name": "EANCode",
+				"type": "varchar"
+			},
+			{
+				"name": "InspectOnReceipt",
+				"type": "char"
+			},
+			{
+				"name": "SalableFlag",
+				"type": "char"
+			},
+			{
+				"name": "PromotionalFlag",
+				"type": "char"
+			},
+			{
+				"name": "EmptyReturnFlag",
+				"type": "char"
+			},
+			{
+				"name": "PartNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "PartAttribute1",
+				"type": "char"
+			},
+			{
+				"name": "PartAttribute2",
+				"type": "char"
+			},
+			{
+				"name": "PartAttribute3",
+				"type": "char"
+			},
+			{
+				"name": "LastUpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "LastUpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "ProductClassification",
+				"type": "char"
+			},
+			{
+				"name": "AutoBatchNumberFlag",
+				"type": "char"
+			},
+			{
+				"name": "RackLocation",
+				"type": "char"
+			},
+			{
+				"name": "RackWarehouse",
+				"type": "char"
+			},
+			{
+				"name": "NonReturnItem",
+				"type": "char"
+			},
+			{
+				"name": "ProductGroupType",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "ReferenceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "POSMFlag",
+				"type": "char"
+			},
+			{
+				"name": "GIFTFlag",
+				"type": "char"
+			},
+			{
+				"name": "LocationCategory",
+				"type": "char"
+			},
+			{
+				"name": "LastTransactionDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UnitOfWeight",
+				"type": "char"
+			},
+			{
+				"name": "PDAUpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DisplayVolume",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 4
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "Product"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

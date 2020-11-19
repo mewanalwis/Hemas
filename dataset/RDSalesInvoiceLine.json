@@ -1,0 +1,439 @@
+{
+	"name": "RDSalesInvoiceLine",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "SalesCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "InvoiceLineNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OrderNumber",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "OrderNumberItem",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RetailerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "CustomerOrderReference",
+				"type": "varchar"
+			},
+			{
+				"name": "InvoiceDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "U1MovementQuantity",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "U2MovementQuantity",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "Price",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ConversionRate",
+				"type": "decimal",
+				"precision": 11,
+				"scale": 4
+			},
+			{
+				"name": "CancelledReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "CancelledDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "WarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "LocationCode",
+				"type": "char"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "UserProfile",
+				"type": "char"
+			},
+			{
+				"name": "StandardCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "AverageCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "FIFOCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "StandardMarginValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "AverageMarginValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "FIFOMarginValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "StandardMarginPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "AverageMarginPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "FIFOMarginPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "GoodsValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalLineTaxValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "VATValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "BTTValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "NBTValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "OtherTAXValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "LineDiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "InvoiceValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "VATPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "BTTPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "NBTPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "OtherTAXPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "LineDiscountPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "DiscountQty",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "DiscountedProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "GoodsValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "VATValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "BTTValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "NBTValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "LineDiscountValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalInvoiceValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalSpecialCommisionValueCur",
+				"type": "decimal",
+				"precision": 4,
+				"scale": 0
+			},
+			{
+				"name": "BatchSerialControlItem",
+				"type": "char"
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UserDefinedField1",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField2",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField3",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField4",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "UserDefinedField5",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "UserDefinedField6",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UploadedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UploadedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "InvoiceLineStartTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "InvoiceLineEndTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CommissionValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CommissionPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CommAcctCode",
+				"type": "char"
+			},
+			{
+				"name": "OtherTAXValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "PricingUnit",
+				"type": "char"
+			},
+			{
+				"name": "StockTerritory",
+				"type": "char"
+			},
+			{
+				"name": "OriginalPrice",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "PDAInvoiceNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PDASalesCategoryCode",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "SalesInvoiceLine"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "RDSalesInvoiceHeader_Test2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RDDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HistoryDump"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "RDSalesInvoiceHeader - Test2.csv",
+				"folderPath": "2000/RD/2020",
+				"fileSystem": "fmcg-data-repository"
+			},
+			"columnDelimiter": "~",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": ""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

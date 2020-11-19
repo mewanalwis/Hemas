@@ -1,0 +1,113 @@
+{
+	"name": "RDTargetExecutive_Staging",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HEMAS_DW_STG",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HistoryDump"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "Year",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Period",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Week",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "RDSalesTargetQty",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesTargetVolume",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesTargetValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesAcheivedQty",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesAcheivedVolume",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "RDSalesAcheivedValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "RDTargetExecutive"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

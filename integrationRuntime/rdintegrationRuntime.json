@@ -1,0 +1,6 @@
+{
+	"name": "rdintegrationRuntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

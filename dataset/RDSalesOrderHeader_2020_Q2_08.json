@@ -1,0 +1,28 @@
+{
+	"name": "RDSalesOrderHeader_2020_Q2_08",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RDDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "RDSalesOrderHeader"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "RD_SalesOrderHeader_2020_Q2_08.csv",
+				"folderPath": "2000/RD/2020/Q2/August",
+				"fileSystem": "fmcg-data-repository"
+			},
+			"columnDelimiter": "~",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": ""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

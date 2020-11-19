@@ -1,0 +1,120 @@
+{
+	"name": "XAMasterDefinitionValue",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecordID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "MasterGroup",
+				"type": "char"
+			},
+			{
+				"name": "MasterGroupValue",
+				"type": "char"
+			},
+			{
+				"name": "MasterGroupValueDescription",
+				"type": "varchar"
+			},
+			{
+				"name": "MasterGroupLevel",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ParentMasterGroup",
+				"type": "char"
+			},
+			{
+				"name": "ParentMasterGroupValue",
+				"type": "char"
+			},
+			{
+				"name": "ParentMasterGroupValueDescription",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "GroupType",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "MasterGroupValueLimit",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "PriceGroupType",
+				"type": "char"
+			},
+			{
+				"name": "SortSequence",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ImageAvailable",
+				"type": "char"
+			},
+			{
+				"name": "LastImageUpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SortSequenceint",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "XA",
+			"table": "MasterDefinitionValue"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,702 @@
+{
+	"name": "RDRetailer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecordID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "RetailerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "RetailerName",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine1",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine2",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine3",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine4",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine5",
+				"type": "varchar"
+			},
+			{
+				"name": "PostCode",
+				"type": "char"
+			},
+			{
+				"name": "PostCodeSys",
+				"type": "char"
+			},
+			{
+				"name": "AlphaSearchCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ShortAddress",
+				"type": "varchar"
+			},
+			{
+				"name": "TelephoneNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "TelephoneNumberSys",
+				"type": "varchar"
+			},
+			{
+				"name": "FaxNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "EMailAddress",
+				"type": "varchar"
+			},
+			{
+				"name": "WebAddress",
+				"type": "varchar"
+			},
+			{
+				"name": "SettlementTermsCode",
+				"type": "char"
+			},
+			{
+				"name": "PaymentMethodCode",
+				"type": "char"
+			},
+			{
+				"name": "BankSortCode",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "BankAccountNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "NominalMaskCode",
+				"type": "char"
+			},
+			{
+				"name": "PriceCodeTable",
+				"type": "char"
+			},
+			{
+				"name": "FactorAccountCode",
+				"type": "char"
+			},
+			{
+				"name": "FactorAccountCodeSon",
+				"type": "char"
+			},
+			{
+				"name": "TradeDiscountCode",
+				"type": "char"
+			},
+			{
+				"name": "ProformaFlag",
+				"type": "char"
+			},
+			{
+				"name": "StatementRequiredFlag",
+				"type": "char"
+			},
+			{
+				"name": "ConsolidateStatementFlag",
+				"type": "char"
+			},
+			{
+				"name": "StatementCurrencyFlag",
+				"type": "char"
+			},
+			{
+				"name": "CurrencyCode",
+				"type": "char"
+			},
+			{
+				"name": "CurrencyProcessingRequired",
+				"type": "char"
+			},
+			{
+				"name": "LetterRequiredFlag",
+				"type": "char"
+			},
+			{
+				"name": "Salutation",
+				"type": "varchar"
+			},
+			{
+				"name": "ContactName",
+				"type": "varchar"
+			},
+			{
+				"name": "OnStopFlag",
+				"type": "char"
+			},
+			{
+				"name": "OnStopReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "CreditLimit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "BackOrderFlag",
+				"type": "decimal",
+				"precision": 1,
+				"scale": 0
+			},
+			{
+				"name": "TextCode",
+				"type": "char"
+			},
+			{
+				"name": "OSOrdersPendingBase",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "OSOrdersPendingCurr",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ElectronicTradingFlag",
+				"type": "char"
+			},
+			{
+				"name": "VATStatus",
+				"type": "char"
+			},
+			{
+				"name": "VATCode",
+				"type": "char"
+			},
+			{
+				"name": "VATRegistrationNo",
+				"type": "varchar"
+			},
+			{
+				"name": "MemberStateCode",
+				"type": "char"
+			},
+			{
+				"name": "TransactionNatureCode",
+				"type": "decimal",
+				"precision": 2,
+				"scale": 0
+			},
+			{
+				"name": "TermsOfDeliverCode",
+				"type": "nchar"
+			},
+			{
+				"name": "ModeOfTransportCode",
+				"type": "nchar"
+			},
+			{
+				"name": "AverageDaysToPay",
+				"type": "decimal",
+				"precision": 3,
+				"scale": 0
+			},
+			{
+				"name": "NoOfPaidTransactionsThisYear",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "NoDaysTakenToPay",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 0
+			},
+			{
+				"name": "LastPaymentValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "LastPaymentDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LastInvoiceDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DefGLExpenseCode",
+				"type": "varchar"
+			},
+			{
+				"name": "DataTransferFlag",
+				"type": "char"
+			},
+			{
+				"name": "ConcurrentAccount",
+				"type": "char"
+			},
+			{
+				"name": "CurrentBalance",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalCreditsNotAllocated",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CreditLimitCurrency",
+				"type": "decimal",
+				"precision": 11,
+				"scale": 2
+			},
+			{
+				"name": "CurrentBalanceCurrency",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalCreditsNotAllocatedCurrency",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "LastPaymentValueCurrency",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "GLCodeControl",
+				"type": "varchar"
+			},
+			{
+				"name": "PricingMethod",
+				"type": "char"
+			},
+			{
+				"name": "PriceGroup",
+				"type": "char"
+			},
+			{
+				"name": "TradeSchemeGroup",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceAccountCode",
+				"type": "char"
+			},
+			{
+				"name": "CommAcctCode",
+				"type": "char"
+			},
+			{
+				"name": "CommAcctSubCode",
+				"type": "char"
+			},
+			{
+				"name": "CommissionPercent",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "ConsInvoiceCode",
+				"type": "char"
+			},
+			{
+				"name": "WarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "LocationCode",
+				"type": "char"
+			},
+			{
+				"name": "SalesWarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "SalesLocationCode",
+				"type": "char"
+			},
+			{
+				"name": "StockWarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "StockLocationCode",
+				"type": "char"
+			},
+			{
+				"name": "DeliveryTermsCode",
+				"type": "char"
+			},
+			{
+				"name": "CountryCode",
+				"type": "char"
+			},
+			{
+				"name": "TransportModeCode",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceDeclaration",
+				"type": "char"
+			},
+			{
+				"name": "CashSalesFlag",
+				"type": "char"
+			},
+			{
+				"name": "DiscountFlag",
+				"type": "char"
+			},
+			{
+				"name": "PartialDespatchAllowed",
+				"type": "char"
+			},
+			{
+				"name": "BackOrdersAllowed",
+				"type": "char"
+			},
+			{
+				"name": "PrefOperatorName1",
+				"type": "varchar"
+			},
+			{
+				"name": "PrefOperatorName2",
+				"type": "varchar"
+			},
+			{
+				"name": "CallFrequency",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "LastCallNumber",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "AvgBuyingFreq",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "TSTelephoneNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "ParentRetailerCode",
+				"type": "char"
+			},
+			{
+				"name": "MinOrderValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "Gurantee",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "Deposit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "Trust",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "MarketShareNorm",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "MarketShare",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "MarketShareAsAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BusinessType",
+				"type": "char"
+			},
+			{
+				"name": "BusinessRegisterationNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "BusinessRegisterationName",
+				"type": "varchar"
+			},
+			{
+				"name": "BusinessRegisterationDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BusinessRegisterationExpiryDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "SalesOperationType",
+				"type": "char"
+			},
+			{
+				"name": "TemporyCreditLimit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TemporyCreditApporedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "TemporyCreditUpTo",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TemporyCreditInvoice",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "ReferenceCode",
+				"type": "varchar"
+			},
+			{
+				"name": "RetailerTypeCode",
+				"type": "char"
+			},
+			{
+				"name": "RetailerClassCode",
+				"type": "char"
+			},
+			{
+				"name": "RetailerCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "NewRetailerFlag",
+				"type": "char"
+			},
+			{
+				"name": "TemporaryCreditApprovedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TempRetailerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "OldTerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "OldRetailerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "TempRetailerExpired",
+				"type": "char"
+			},
+			{
+				"name": "PDAUpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Longitude",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 6
+			},
+			{
+				"name": "Latitude",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 6
+			},
+			{
+				"name": "ShortExpiryPeriod",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CustomerGRNVerifyFlag",
+				"type": "char"
+			},
+			{
+				"name": "LicenseNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "LicenseOwner",
+				"type": "varchar"
+			},
+			{
+				"name": "LicenseExpiryDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RetailerTrustLimit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ControlGLCode",
+				"type": "varchar"
+			},
+			{
+				"name": "VolumeCapacity",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 4
+			},
+			{
+				"name": "PharmacistName",
+				"type": "varchar"
+			},
+			{
+				"name": "PharmacistRegNo",
+				"type": "varchar"
+			},
+			{
+				"name": "PharmacistNIC",
+				"type": "varchar"
+			},
+			{
+				"name": "Detailing",
+				"type": "char"
+			},
+			{
+				"name": "HCPCode",
+				"type": "varchar"
+			},
+			{
+				"name": "RetailerPointCategory",
+				"type": "char"
+			},
+			{
+				"name": "PointSchemeGroup",
+				"type": "char"
+			},
+			{
+				"name": "DistributorMapCode",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "Retailer"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

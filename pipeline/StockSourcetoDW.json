@@ -1,0 +1,217 @@
+{
+	"name": "StockSourcetoDW",
+	"properties": {
+		"activities": [
+			{
+				"name": "load distributor stock",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT\n      [Date]\n      ,I.[BusinessUnit]\n      ,I.[TerritoryCode]\n      ,I.[WarehouseCode]\n      ,I.[LocationCode]\n      ,[ProductCode]\n      ,[LotNumber]\n      ,[BatchSerialNumber]\n      ,[ReceivedQuantity]\n      ,[BalanceQuantity]\n      ,[BatchPrice],\n      L.[Type]\n  FROM [XONTUSERVENTURA_ORG].[RD].[CurrentSerialBatchDayEnd] I (nolock)\n  INNER JOIN \n  (Select distinct LocationCode, [Type] FROM [RD].[Location]) L ON I.LocationCode = L.LocationCode\n  WHERE  convert(varchar, Date, 23) \n  =  convert(varchar, dateadd(Day,-1,getdate()), 23)",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "WarehouseCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "WarehouseCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "LocationCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "LocationCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "LotNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "LotNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "BatchSerialNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BatchSerialNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ReceivedQuantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "ReceivedQuantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "BalanceQuantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "BalanceQuantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "BatchPrice",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "BatchPrice",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "Type",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "LocationType",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDCurrentSerialBatchDayEnd",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "FactDistributorInventory",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "DWPipelines"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-11-04T17:07:50Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

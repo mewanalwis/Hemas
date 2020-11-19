@@ -1,0 +1,358 @@
+{
+	"name": "RDDistributor",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecordID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "DistributorCode",
+				"type": "char"
+			},
+			{
+				"name": "DistributorName",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine1",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine2",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine3",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine4",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine5",
+				"type": "varchar"
+			},
+			{
+				"name": "PostCode",
+				"type": "char"
+			},
+			{
+				"name": "PostCodeSys",
+				"type": "char"
+			},
+			{
+				"name": "AlphaSearchCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ShortAddress",
+				"type": "varchar"
+			},
+			{
+				"name": "TelephoneNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "TelephoneNumberSys",
+				"type": "varchar"
+			},
+			{
+				"name": "FaxNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "EMailAddress",
+				"type": "varchar"
+			},
+			{
+				"name": "WebAddress",
+				"type": "varchar"
+			},
+			{
+				"name": "Salutation",
+				"type": "varchar"
+			},
+			{
+				"name": "Title",
+				"type": "varchar"
+			},
+			{
+				"name": "ContactName",
+				"type": "varchar"
+			},
+			{
+				"name": "OnStopFlag",
+				"type": "char"
+			},
+			{
+				"name": "OnStopReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "CreditLimit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "VATStatus",
+				"type": "char"
+			},
+			{
+				"name": "VATCode",
+				"type": "char"
+			},
+			{
+				"name": "VATRegistrationNo",
+				"type": "varchar"
+			},
+			{
+				"name": "PricingMethod",
+				"type": "char"
+			},
+			{
+				"name": "PriceGroup",
+				"type": "char"
+			},
+			{
+				"name": "TradeSchemeGroup",
+				"type": "char"
+			},
+			{
+				"name": "CommAcctCode",
+				"type": "char"
+			},
+			{
+				"name": "CommAcctSubCode",
+				"type": "char"
+			},
+			{
+				"name": "CommissionPercent",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "SalesExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "SupplierCode",
+				"type": "char"
+			},
+			{
+				"name": "SourceWarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "SourceLocationCode",
+				"type": "char"
+			},
+			{
+				"name": "DestinationWarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "DestinationLocationCode",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "Gurantee",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "Deposit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "Trust",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "MarketShareNorm",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "MarketShare",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "MarketShareAsAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "CountryCode",
+				"type": "char"
+			},
+			{
+				"name": "TransportModeCode",
+				"type": "char"
+			},
+			{
+				"name": "TermsOfDeliverCode",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceDeclaration",
+				"type": "char"
+			},
+			{
+				"name": "ConsInvoiceCode",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceAccountCode",
+				"type": "varchar"
+			},
+			{
+				"name": "CurrencyProcessingRequired",
+				"type": "char"
+			},
+			{
+				"name": "CurrencyCode",
+				"type": "char"
+			},
+			{
+				"name": "SettlementTermsCode",
+				"type": "char"
+			},
+			{
+				"name": "PaymentMethodCode",
+				"type": "char"
+			},
+			{
+				"name": "CashSalesFlag",
+				"type": "char"
+			},
+			{
+				"name": "DiscountFlag",
+				"type": "char"
+			},
+			{
+				"name": "PartialDespatchAllowed",
+				"type": "char"
+			},
+			{
+				"name": "BackOrdersAllowed",
+				"type": "char"
+			},
+			{
+				"name": "ProformaFlag",
+				"type": "char"
+			},
+			{
+				"name": "NBTStatus",
+				"type": "char"
+			},
+			{
+				"name": "NBTCode",
+				"type": "char"
+			},
+			{
+				"name": "BTTStatus",
+				"type": "char"
+			},
+			{
+				"name": "BTTCode",
+				"type": "char"
+			},
+			{
+				"name": "ERPDistributorCode",
+				"type": "varchar"
+			},
+			{
+				"name": "NBTRegistrationNo",
+				"type": "varchar"
+			},
+			{
+				"name": "Image",
+				"type": "image"
+			},
+			{
+				"name": "Longitude",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 6
+			},
+			{
+				"name": "Latitude",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 6
+			},
+			{
+				"name": "ConsignmentAgent",
+				"type": "char"
+			},
+			{
+				"name": "ParentDistributor",
+				"type": "char"
+			},
+			{
+				"name": "ParentDistributorCode",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "Distributor"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

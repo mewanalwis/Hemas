@@ -1,0 +1,20 @@
+{
+	"name": "DimGeography",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_DWH",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DWDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Dim",
+			"table": "Geography"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

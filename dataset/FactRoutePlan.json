@@ -1,0 +1,20 @@
+{
+	"name": "FactRoutePlan",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_DWH",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DWDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Fact",
+			"table": "RoutePlan"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

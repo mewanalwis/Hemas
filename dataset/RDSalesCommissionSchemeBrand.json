@@ -1,0 +1,34 @@
+{
+	"name": "RDSalesCommissionSchemeBrand",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "SchemeRecID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Code",
+				"type": "char"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "SalesCommissionSchemeBrand"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

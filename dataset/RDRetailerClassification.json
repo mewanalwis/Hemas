@@ -1,0 +1,77 @@
+{
+	"name": "RDRetailerClassification",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "RetailerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "MasterGroup",
+				"type": "char"
+			},
+			{
+				"name": "MasterGroupDescription",
+				"type": "varchar"
+			},
+			{
+				"name": "MasterGroupValue",
+				"type": "char"
+			},
+			{
+				"name": "MasterGroupValueDescription",
+				"type": "varchar"
+			},
+			{
+				"name": "GroupType",
+				"type": "char"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "RetailerClassification"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

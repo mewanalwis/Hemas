@@ -1,0 +1,154 @@
+{
+	"name": "RDCurrentSerialBatchDayEnd_Staging",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HEMAS_DW_STG",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HistoryDump"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "SummaryRecID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Date",
+				"type": "date"
+			},
+			{
+				"name": "RecID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "WarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "LocationCode",
+				"type": "char"
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "LotNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "BatchSerialNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "ReceivedQuantity",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "BalanceQuantity",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "EntryDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ExpiryDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BatchDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TransactionCode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRNTypeRefIN",
+				"type": "char"
+			},
+			{
+				"name": "TRNTypeHeaderNumberIN",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRNTypeDetailNumberIN",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "AutoLotNo",
+				"type": "char"
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "AllocatedQuantity",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "BatchCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "BatchPrice",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "RDCurrentSerialBatchDayEnd"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

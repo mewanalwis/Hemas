@@ -1,0 +1,20 @@
+{
+	"name": "DimExecutive",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_DWH",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DWDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Dim",
+			"table": "Executive"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

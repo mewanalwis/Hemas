@@ -1,0 +1,3218 @@
+{
+	"name": "SAP_CSV_to_Staging_MARA_Item_Master",
+	"properties": {
+		"activities": [
+			{
+				"name": "SAP_CSV_to_Staging_MARA_Item_Master",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						}
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "MANDT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MANDT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MATNR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MATNR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ERSDA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ERSDA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ERNAM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ERNAM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAEDA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "LAEDA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AENAM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "AENAM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VPSTA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "VPSTA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PSTAT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PSTAT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LVORM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "LVORM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MTART",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MTART",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MBRSH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MBRSH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MATKL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MATKL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BISMT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BISMT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MEINS",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MEINS",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BSTME",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BSTME",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZEINR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZEINR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZEIAR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZEIAR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZEIVR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZEIVR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZEIFO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ZEIFO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AESZN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "AESZN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BLATT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BLATT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BLANZ",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BLANZ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FERTH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FERTH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FORMT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FORMT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GROES",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "GROES",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WRKST",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "WRKST",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NORMT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "NORMT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LABOR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "LABOR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EKWSL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "EKWSL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRGEW",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "BRGEW",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "NTGEW",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "NTGEW",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "GEWEI",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "GEWEI",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VOLUM",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "VOLUM",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VOLEH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "VOLEH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BEHVO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BEHVO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RAUBE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "RAUBE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEMPB",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "TEMPB",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DISST",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "DISST",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TRAGR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "TRAGR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STOFF",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "STOFF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SPART",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SPART",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KUNNR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KUNNR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EANNR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "EANNR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WESCH",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "WESCH",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BWVOR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BWVOR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BWSCL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BWSCL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SAISO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SAISO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ETIAR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ETIAR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ETIFO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ETIFO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ENTAR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ENTAR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EAN11",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "EAN11",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NUMTP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "NUMTP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAENG",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "LAENG",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BREIT",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "BREIT",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "HOEHE",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "HOEHE",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MEABM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MEABM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRDHA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PRDHA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AEKLK",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "AEKLK",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CADKZ",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "CADKZ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QMPUR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "QMPUR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ERGEW",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "ERGEW",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ERGEI",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ERGEI",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ERVOL",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "ERVOL",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ERVOE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ERVOE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GEWTO",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "GEWTO",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VOLTO",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "VOLTO",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VABME",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "VABME",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KZREV",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KZREV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KZKFG",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KZKFG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XCHPF",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "XCHPF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VHART",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "VHART",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FUELG",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "FUELG",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "STFAK",
+									"type": "Int16",
+									"physicalType": "INT_16"
+								},
+								"sink": {
+									"name": "STFAK",
+									"type": "Int16",
+									"physicalType": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "MAGRV",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MAGRV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BEGRU",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BEGRU",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DATAB",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "DATAB",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LIQDT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "LIQDT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SAISJ",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SAISJ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PLGTP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PLGTP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MLGUT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MLGUT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EXTWG",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "EXTWG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SATNR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SATNR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ATTYP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ATTYP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KZKUP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KZKUP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KZNFM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KZNFM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PMATA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PMATA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MSTAE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MSTAE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MSTAV",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MSTAV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MSTDE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MSTDE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MSTDV",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MSTDV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TAKLV",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "TAKLV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RBNRM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "RBNRM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MHDRZ",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "MHDRZ",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MHDHB",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "MHDHB",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MHDLP",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "MHDLP",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "INHME",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "INHME",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INHAL",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "INHAL",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "VPREH",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "VPREH",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ETIAG",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ETIAG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INHBR",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "INHBR",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CMETH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "CMETH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CUOBF",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "CUOBF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KZUMW",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KZUMW",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KOSCH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KOSCH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SPROF",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SPROF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NRFHG",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "NRFHG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MFRPN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MFRPN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MFRNR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MFRNR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BMATN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BMATN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MPROF",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MPROF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KZWSM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KZWSM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SAITY",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SAITY",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROFL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PROFL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IHIVI",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "IHIVI",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ILOOS",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ILOOS",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SERLV",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SERLV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KZGVH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KZGVH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XGCHP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "XGCHP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "KZEFF",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "KZEFF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COMPL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "COMPL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IPRKZ",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "IPRKZ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RDMHD",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "RDMHD",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PRZUS",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PRZUS",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MTPOS_MARA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MTPOS_MARA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BFLME",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BFLME",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MATFI",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MATFI",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CMREL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "CMREL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BBTYP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BBTYP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SLED_BBD",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SLED_BBD",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GTIN_VARIANT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "GTIN_VARIANT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GENNR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "GENNR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RMATP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "RMATP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GDS_RELEVANT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "GDS_RELEVANT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WEORA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "WEORA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HUTYP_DFLT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "HUTYP_DFLT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PILFERABLE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PILFERABLE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WHSTC",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "WHSTC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WHMATGR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "WHMATGR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HNDLCODE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "HNDLCODE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HAZMAT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "HAZMAT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HUTYP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "HUTYP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TARE_VAR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "TARE_VAR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MAXC",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "MAXC",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MAXC_TOL",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "MAXC_TOL",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MAXL",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "MAXL",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MAXB",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "MAXB",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MAXH",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "MAXH",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "MAXDIM_UOM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MAXDIM_UOM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HERKL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "HERKL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MFRGR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MFRGR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QQTIME",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "QQTIME",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "QQTIMEUOM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "QQTIMEUOM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QGRP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "QGRP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SERIAL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SERIAL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PS_SMARTFORM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PS_SMARTFORM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOGUNIT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "LOGUNIT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CWQREL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "CWQREL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CWQPROC",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "CWQPROC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CWQTOLGR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "CWQTOLGR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADPROF",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ADPROF",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IPMIPPRODUCT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "IPMIPPRODUCT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ALLOW_PMAT_IGNO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ALLOW_PMAT_IGNO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MEDIUM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MEDIUM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COMMODITY",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "COMMODITY",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ANIMAL_ORIGIN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ANIMAL_ORIGIN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TEXTILE_COMP_IND",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "TEXTILE_COMP_IND",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SGT_CSGR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SGT_CSGR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SGT_COVSA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SGT_COVSA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SGT_STAT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SGT_STAT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SGT_SCOPE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SGT_SCOPE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SGT_REL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SGT_REL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ANP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ANP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PSM_CODE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PSM_CODE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FSH_MG_AT1",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FSH_MG_AT1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FSH_MG_AT2",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FSH_MG_AT2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FSH_MG_AT3",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FSH_MG_AT3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FSH_SEALV",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FSH_SEALV",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FSH_SEAIM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FSH_SEAIM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FSH_SC_MID",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FSH_SC_MID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DUMMY_PRD_INCL_EEW_PS",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "DUMMY_PRD_INCL_EEW_PS",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SCM_MATID_GUID16",
+									"type": "Byte[]",
+									"physicalType": "BINARY"
+								},
+								"sink": {
+									"name": "SCM_MATID_GUID16",
+									"type": "Byte[]",
+									"physicalType": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "SCM_MATID_GUID22",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SCM_MATID_GUID22",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SCM_MATURITY_DUR",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "SCM_MATURITY_DUR",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SCM_SHLF_LFE_REQ_MIN",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "SCM_SHLF_LFE_REQ_MIN",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SCM_SHLF_LFE_REQ_MAX",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "SCM_SHLF_LFE_REQ_MAX",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "SCM_PUOM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SCM_PUOM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/CWM/XCWMAT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/CWM/XCWMAT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/CWM/VALUM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/CWM/VALUM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/CWM/TOLGR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/CWM/TOLGR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/CWM/TARA",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/CWM/TARA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/CWM/TARUM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/CWM/TARUM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/BEV1/LULEINH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/BEV1/LULEINH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/BEV1/LULDEGRP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/BEV1/LULDEGRP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/BEV1/NESTRUCCAT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/BEV1/NESTRUCCAT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/DSD/SL_TOLTYP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/DSD/SL_TOLTYP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/DSD/SV_CNT_GRP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/DSD/SV_CNT_GRP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/DSD/VC_GROUP",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/DSD/VC_GROUP",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/KADU",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/KADU",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/ABMEIN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/SAPMP/ABMEIN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/KADP",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/KADP",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/BRAD",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/BRAD",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/SPBI",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/SPBI",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/TRAD",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/TRAD",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/KEDU",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/KEDU",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/SPTR",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/SPTR",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/FBDK",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/FBDK",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/FBHK",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/FBHK",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/RILI",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/SAPMP/RILI",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/FBAK",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/SAPMP/FBAK",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/AHO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/SAPMP/AHO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/SAPMP/MIFRR",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/SAPMP/MIFRR",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_TILT_IND",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_TILT_IND",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_STACK_IND",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_STACK_IND",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_BOT_IND",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_BOT_IND",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_TOP_IND",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_TOP_IND",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_STACK_NO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_STACK_NO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_PAL_IND",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_PAL_IND",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_PAL_OVR_D",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/VSO/R_PAL_OVR_D",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_PAL_OVR_W",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/VSO/R_PAL_OVR_W",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_PAL_B_HT",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/VSO/R_PAL_B_HT",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_PAL_MIN_H",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/VSO/R_PAL_MIN_H",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_TOL_B_HT",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								},
+								"sink": {
+									"name": "/VSO/R_TOL_B_HT",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_NO_P_GVH",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_NO_P_GVH",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_QUAN_UNIT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_QUAN_UNIT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "/VSO/R_KZGVH_IND",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "/VSO/R_KZGVH_IND",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PACKCODE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PACKCODE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DG_PACK_STATUS",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "DG_PACK_STATUS",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MCOND",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MCOND",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RETDELC",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "RETDELC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOGLEV_RETO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "LOGLEV_RETO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "NSNID",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "NSNID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OVLPN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "OVLPN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ADSPC_SPC",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "ADSPC_SPC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VARID",
+									"type": "Byte[]",
+									"physicalType": "BINARY"
+								},
+								"sink": {
+									"name": "VARID",
+									"type": "Byte[]",
+									"physicalType": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "MSBOOKPARTNO",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "MSBOOKPARTNO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VTYPE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "VTYPE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EVVAL",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "EVVAL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DVERS",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "DVERS",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DPCBT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "DPCBT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "XGRDT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "XGRDT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IMATN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "IMATN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PICNUM",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "PICNUM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BSTAT",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BSTAT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COLOR_ATINN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "COLOR_ATINN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SIZE1_ATINN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SIZE1_ATINN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SIZE2_ATINN",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SIZE2_ATINN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COLOR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "COLOR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SIZE1",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SIZE1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SIZE2",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "SIZE2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FREE_CHAR",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FREE_CHAR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CARE_CODE",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "CARE_CODE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BRAND_ID",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "BRAND_ID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_CODE1",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_CODE1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_PART1",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_PART1",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_CODE2",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_CODE2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_PART2",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_PART2",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_CODE3",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_CODE3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_PART3",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_PART3",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_CODE4",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_CODE4",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_PART4",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_PART4",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_CODE5",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_CODE5",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FIBER_PART5",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FIBER_PART5",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FASHGRD",
+									"type": "String",
+									"physicalType": "UTF8"
+								},
+								"sink": {
+									"name": "FASHGRD",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "PQ_Source_SAP_MARA_Item_Master",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "RDSTG_SAP_MARA_Item_Master",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "SAP_STG"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-10-21T11:30:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

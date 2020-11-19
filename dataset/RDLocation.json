@@ -1,0 +1,90 @@
+{
+	"name": "RDLocation",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "WarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "LocationCode",
+				"type": "char"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			},
+			{
+				"name": "Type",
+				"type": "char"
+			},
+			{
+				"name": "DefaultLocation",
+				"type": "char"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "Category",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "VanLocation",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "Location"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

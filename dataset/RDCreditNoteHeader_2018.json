@@ -1,0 +1,28 @@
+{
+	"name": "RDCreditNoteHeader_2018",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RDDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "RDCreditNoteHeader"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "RD_CreditNoteHeader_2018.csv",
+				"folderPath": "2000/RD/2018",
+				"fileSystem": "fmcg-data-repository"
+			},
+			"columnDelimiter": "~",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

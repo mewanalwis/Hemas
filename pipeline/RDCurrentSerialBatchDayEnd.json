@@ -1,0 +1,402 @@
+{
+	"name": "RDCurrentSerialBatchDayEnd",
+	"properties": {
+		"activities": [
+			{
+				"name": "RDCurrentSerialBatchDayEnd",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "Select * from RD.CurrentSerialBatchDayEnd\nWhere Date>='09/01/2020' and Date<'10/01/2020'",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "SummaryRecID",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "SummaryRecID",
+									"type": "Int64",
+									"physicalType": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "RecID",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "RecID",
+									"type": "Int64",
+									"physicalType": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "WarehouseCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "WarehouseCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LocationCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "LocationCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LotNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "LotNumber",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BatchSerialNumber",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BatchSerialNumber",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ReceivedQuantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "ReceivedQuantity",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BalanceQuantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "BalanceQuantity",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "EntryDate",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "EntryDate",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ExpiryDate",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "ExpiryDate",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "BatchDate",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "BatchDate",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "TransactionCode",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "TransactionCode",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "TRNTypeRefIN",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "TRNTypeRefIN",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TRNTypeHeaderNumberIN",
+									"type": "Int64",
+									"physicalType": "bigint"
+								},
+								"sink": {
+									"name": "TRNTypeHeaderNumberIN",
+									"type": "Int64",
+									"physicalType": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "TRNTypeDetailNumberIN",
+									"type": "Int16",
+									"physicalType": "smallint"
+								},
+								"sink": {
+									"name": "TRNTypeDetailNumberIN",
+									"type": "Int16",
+									"physicalType": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "AutoLotNo",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "AutoLotNo",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CreatedBy",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "UpdatedBy",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "UpdatedOn",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "AllocatedQuantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "AllocatedQuantity",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BatchCost",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "BatchCost",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "BatchPrice",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "BatchPrice",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDCurrentSerialBatchDayEnd",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "RDCurrentSerialBatchDayEnd_2020_Q2_09",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "RDLakeDump"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-10-06T16:39:52Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

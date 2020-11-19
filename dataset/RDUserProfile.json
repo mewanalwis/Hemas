@@ -1,0 +1,91 @@
+{
+	"name": "RDUserProfile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "UserProfile",
+				"type": "char"
+			},
+			{
+				"name": "UserProfileName",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine1",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine2",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine3",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine4",
+				"type": "varchar"
+			},
+			{
+				"name": "AddressLine5",
+				"type": "varchar"
+			},
+			{
+				"name": "PostCode",
+				"type": "char"
+			},
+			{
+				"name": "TelephoneNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "MobileNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "EmailAddress",
+				"type": "varchar"
+			},
+			{
+				"name": "TradeSchemeGroup",
+				"type": "char"
+			},
+			{
+				"name": "LastPaymentDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "NIC",
+				"type": "char"
+			},
+			{
+				"name": "EmployeeNo",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "UserProfile"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

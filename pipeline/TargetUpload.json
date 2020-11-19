@@ -1,0 +1,263 @@
+{
+	"name": "TargetUpload",
+	"properties": {
+		"activities": [
+			{
+				"name": "load_target",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "select T.BusinessUnit,\n\t\tCase When T.Period > 9 Then convert(varchar,(T.Year+1))+'-' +right('00'+ convert(varchar,(T.Period-9)),2) + '-' + '02'\n\t\t\t\t\t\t\t\tElse convert(varchar,T.Year)+'-' + right('00'+ convert(varchar,T.Period+3),2)+ '-' + '02' End As TargetMonth ,\n\t\tT.Year, \n\t\tT.Period, \n\t\tT.Week, \n\t\tT.ExecutiveCode, \n\t\tT.ProductCode, \n\t\tT.RDSalesTargetQty, \n\t\tT.RDSalesTargetValue, \n\t\tT.RDSalesTargetVolume, \n\t\tT.RDSalesAcheivedQty, \n\t\tT.RDSalesAcheivedValue, \n\t\tT.RDSalesAcheivedVolume,\n\t\tT.CreatedOn\nfrom RD.TargetExecutive T\nwhere Year = 2020 and Period = 8",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "TargetMonth",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "TargetMonth",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "Year",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Year",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Period",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Period",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "Week",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "Week",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "ExecutiveCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "ExecutiveCode",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesTargetQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "RDSalesTargetQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesTargetValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "RDSalesTargetValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesTargetVolume",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "RDSalesTargetVolume",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesAcheivedQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "RDSalesAcheivedQty",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesAcheivedValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "RDSalesAcheivedValue",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "RDSalesAcheivedVolume",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "RDSalesAcheivedVolume",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDTargetExecutive",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "FactRDExexutiveTarget",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"TargetYear": {
+				"type": "int",
+				"defaultValue": 2020
+			},
+			"TargetPeriod": {
+				"type": "int",
+				"defaultValue": 3
+			}
+		},
+		"folder": {
+			"name": "DWPipelines"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-11-07T06:24:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

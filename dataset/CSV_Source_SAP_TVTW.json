@@ -1,0 +1,35 @@
+{
+	"name": "CSV_Source_SAP_TVTW",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HemasGroupDLStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SAP_Data_Live"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "TVTW_SD.csv",
+				"folderPath": "Holdings/Hemas_Group/SAP_Common/Full_Refresh",
+				"fileSystem": "hemasgroup-data-repository"
+			},
+			"columnDelimiter": "文",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": ""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

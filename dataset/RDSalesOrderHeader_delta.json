@@ -1,0 +1,31 @@
+{
+	"name": "RDSalesOrderHeader_delta",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RDDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "dl_DestinationDataSets/DailyData"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(formatDateTime(adddays(addtotime(utcnow(),330,'Minute'),-1),'yyyyMMdd'),'_RDSalesOrderHeader.csv')",
+					"type": "Expression"
+				},
+				"folderPath": "2000/RD/DailyData",
+				"fileSystem": "fmcg-data-repository"
+			},
+			"columnDelimiter": "~",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

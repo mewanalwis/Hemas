@@ -1,0 +1,135 @@
+{
+	"name": "RDRoute",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecordID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "RouteCode",
+				"type": "char"
+			},
+			{
+				"name": "RouteType",
+				"type": "char"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			},
+			{
+				"name": "RouteCategory",
+				"type": "char"
+			},
+			{
+				"name": "MonthlyFrequency",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Distance",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 2
+			},
+			{
+				"name": "Duration",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Volume",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "TargetShare",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "OutletsAttached",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CarryHistory",
+				"type": "char"
+			},
+			{
+				"name": "RouteDefaultExecutive",
+				"type": "char"
+			},
+			{
+				"name": "RouteDefaultVehicle",
+				"type": "char"
+			},
+			{
+				"name": "RouteDefaultDriver",
+				"type": "char"
+			},
+			{
+				"name": "RouteDefaultPorter",
+				"type": "char"
+			},
+			{
+				"name": "RouteText",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "DefaultRouteCode",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "Route"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

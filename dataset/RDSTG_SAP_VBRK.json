@@ -1,0 +1,599 @@
+{
+	"name": "RDSTG_SAP_VBRK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HEMAS_DW_STG",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SAP_Staging_Dest"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "VBELN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKART",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKTYP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VBTYP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "WAERK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VKORG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VTWEG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KALSM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KNUMV",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VSBED",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKDAT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BELNR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GJAHR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "POPER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KONDA",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KDGRP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BZIRK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PLTYP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INCO1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INCO2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RFBSK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MRNKZ",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KURRF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CPKUR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VALTG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VALDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ZTERM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZLSCH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KTGRD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LAND1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REGIO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "COUNC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CITYC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BUKRS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK4",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK5",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK6",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK7",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK8",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAXK9",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NETWR",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ZUKRI",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ERNAM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ERZET",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ERDAT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "STAFO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KUNRG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KUNAG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MABER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STWAE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STCEG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AEDAT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SFAKN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KNUMA",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKART_RL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKDAT_RL",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "KURST",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MSCHL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MANSP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SPART",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KKBER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KNKLI",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CMWAE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CMKUF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HITYP_PR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BSTNK_VF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VBUND",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKART_AB",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KAPPL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LANDTX",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STCEG_H",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STCEG_L",
+				"type": "nvarchar"
+			},
+			{
+				"name": "XBLNR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZUONR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MWSBK",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "LOGSYS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKSTO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "XEGDR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RPLNR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "J_1AFITP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KURRF_DAT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "KIDNO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BVTYP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NUMPG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BUPLA",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VKONT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKK_DOCSTAT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NRZAS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SPE_BILLING_IND",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VTREF",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FK_SOURCE_SYS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKTYP_CRM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STGRD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CHANGED_ON",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EXPKZ",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EXNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AKWAE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AKKUR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LCNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "_DATAAGING",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BUCHK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GBSTK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RELIK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "UVALS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "UVPRS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKSAK",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FKARA",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VF_STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VF_TODO",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DRAFT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ACTIVEDOCUMENT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GRWCU",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INTRA_REL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INTRA_EXCL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ACCRREL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "J_1TPBUPL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INCOV",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INCO2_L",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INCO3_L",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DUMMY_BILLINGDOC_INCL_EEW_PS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZAPCGKH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "APCGK_EXTENDH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZABDATH",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DPC_REL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AD01BASDOC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AD01FAREG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VCHRNMBR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "J_3GKBAUL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "J_3GKENIE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "KUNWE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MNDID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PAY_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SEPON",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MNDVG",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SPPAYM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SPPORD",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "sap",
+			"table": "VBRK"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

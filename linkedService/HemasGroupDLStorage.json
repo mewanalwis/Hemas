@@ -1,0 +1,15 @@
+{
+	"name": "HemasGroupDLStorage",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://hemasgrouprepositorysan.dfs.core.windows.net"
+		},
+		"connectVia": {
+			"referenceName": "rdintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

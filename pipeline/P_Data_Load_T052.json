@@ -1,0 +1,380 @@
+{
+	"name": "P_Data_Load_T052",
+	"properties": {
+		"activities": [
+			{
+				"name": "P_Data_Load_T052",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SqlServerSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "MANDT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MANDT",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZTERM",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZTERM",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZTAGG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZTAGG",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZDART",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZDART",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZFAEL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZFAEL",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZMONA",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZMONA",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZTAG1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZTAG1",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZPRZ1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZPRZ1",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 18,
+									"precision": 38
+								}
+							},
+							{
+								"source": {
+									"name": "ZTAG2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZTAG2",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZPRZ2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZPRZ2",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 18,
+									"precision": 38
+								}
+							},
+							{
+								"source": {
+									"name": "ZTAG3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZTAG3",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSTG1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZSTG1",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSMN1",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZSMN1",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSTG2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZSTG2",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSMN2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZSMN2",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSTG3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZSTG3",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSMN3",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZSMN3",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "XZBRV",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "XZBRV",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZSCHF",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZSCHF",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "XCHPB",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "XCHPB",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "TXN08",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TXN08",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ZLSCH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ZLSCH",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "XCHPM",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "XCHPM",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "KOART",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "KOART",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "XSPLT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "XSPLT",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "XSCRC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "XSCRC",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CSV_Source_SAP_T052",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "RDSTG_SAP_T052_Pay_Terms",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "HistoryData/SAP_Data_Pipes"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-10-28T16:33:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,323 @@
+{
+	"name": "RDCreditNoteLine",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "CreditNoteNo",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "CreditNoteLineNo",
+				"type": "decimal",
+				"precision": 3,
+				"scale": 0
+			},
+			{
+				"name": "SalesCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "OrderNumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OrderLineNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditedU1",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "CreditDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RetailerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "RetailerCodeSon",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceNo",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "GoodsValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalLineTaxValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "VATValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "BTTValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "NBTValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "OtherTAXValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "VATCode",
+				"type": "char"
+			},
+			{
+				"name": "PerU1",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 0
+			},
+			{
+				"name": "CostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "UpdateStock",
+				"type": "char"
+			},
+			{
+				"name": "CreditReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "ConversionFactor",
+				"type": "decimal",
+				"precision": 11,
+				"scale": 4
+			},
+			{
+				"name": "PricingUnit",
+				"type": "char"
+			},
+			{
+				"name": "DiscountPercent",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "DiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "DiscountQty",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "DiscountedProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "ReturnType",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "WarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "LocationCode",
+				"type": "char"
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "CancellationReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "CancellationDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CancelRetunGracePeriod",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "InvoiceLineNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CreditedU2",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "CreditPrice",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "StandardCost",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CreditEntryType",
+				"type": "char"
+			},
+			{
+				"name": "UserProfile",
+				"type": "char"
+			},
+			{
+				"name": "GoodsValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalLineTaxValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "VATValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "BTTValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "NBTValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "OtherTAXValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "DiscountValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "RouteCode",
+				"type": "char"
+			},
+			{
+				"name": "StockTerritory",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "CreditNoteLine"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

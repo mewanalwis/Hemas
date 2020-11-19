@@ -1,0 +1,670 @@
+{
+	"name": "RDInvoiceHeader_Staging",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HEMAS_DW_STG",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "HistoryDump"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "SalesCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RetailerCode",
+				"type": "varchar"
+			},
+			{
+				"name": "DistributorCode",
+				"type": "char"
+			},
+			{
+				"name": "CustomerOrderReference",
+				"type": "varchar"
+			},
+			{
+				"name": "InvoiceDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CancelledReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "CancelledDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "WarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "LocationCode",
+				"type": "char"
+			},
+			{
+				"name": "CommissionAcctCode",
+				"type": "char"
+			},
+			{
+				"name": "CurrencyCode",
+				"type": "char"
+			},
+			{
+				"name": "CurrencyAmount",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CarriageAmount",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "InvoiceAccountCode",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceSource",
+				"type": "char"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "RouteCode",
+				"type": "char"
+			},
+			{
+				"name": "VisitNumber",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "VisitSequence",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SettlementCode",
+				"type": "char"
+			},
+			{
+				"name": "ExchangeRate",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "PaymentMethodCode",
+				"type": "char"
+			},
+			{
+				"name": "StandardCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "AverageCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "FIFOCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "StandardMarginValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "AverageMarginValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "FIFOMarginValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "StandardMarginPercent",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "AverageMarginPercent",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "FIFOMarginPercent",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "TotalGoodsValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalVATValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalBTTValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalNBTValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalOtherTAXValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalHeaderDiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalLineDiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalSpecialDiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalOtherDiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalInvoiceValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalVATPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalBTTPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalNBTPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalOtherTAXPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalHeaderDiscountPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalLineDiscountPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalSpecialDiscountPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalOtherDiscountPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalCommisionValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalCommisionPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalGoodsValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalVATValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalBTTValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalNBTValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalOtherTAXValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalHeaderDiscountValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalLineDiscountValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalSpecialDiscountValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalOtherDiscountValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TotalInvoiceValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TransportReference",
+				"type": "char"
+			},
+			{
+				"name": "TotalCommisionValueCur",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ExtraChargesDesc1",
+				"type": "varchar"
+			},
+			{
+				"name": "ExtraChargeValue1",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "ExtraChargesDesc2",
+				"type": "varchar"
+			},
+			{
+				"name": "ExtraChargeValue2",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "UserDefinedField1",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField2",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField3",
+				"type": "varchar"
+			},
+			{
+				"name": "UserDefinedField4",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "UserDefinedField5",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "UserDefinedField6",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 0
+			},
+			{
+				"name": "OrderNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "UplaodedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UploadedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "InvoiceStartTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "InvoiceEndTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ValueLimitExceeded",
+				"type": "char"
+			},
+			{
+				"name": "ValueInHand",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "CommissionValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "UserProfile",
+				"type": "char"
+			},
+			{
+				"name": "TemporyCreditLimit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "TemporyCreditApprovedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "TemporyCreditType",
+				"type": "char"
+			},
+			{
+				"name": "TemporyCreditUpTo",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "StockTerritory",
+				"type": "char"
+			},
+			{
+				"name": "PriceOverWriteUser",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscountOverWriteUser",
+				"type": "varchar"
+			},
+			{
+				"name": "ConsolidateInvNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PrintFlag",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "PDAVisitNumber",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PDAVisitSequence",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "PDAInvoiceNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "PDASalesCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "LoginExecutive",
+				"type": "char"
+			},
+			{
+				"name": "Remarks",
+				"type": "varchar"
+			},
+			{
+				"name": "PaymentDueDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DeliverySummaryCreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CancelInvoiceGracePeriod",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "GraceCancelPeriodExceeded",
+				"type": "char"
+			},
+			{
+				"name": "Longitude",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 6
+			},
+			{
+				"name": "Latitude",
+				"type": "decimal",
+				"precision": 12,
+				"scale": 6
+			},
+			{
+				"name": "DeliveryDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TaxInvoice",
+				"type": "char"
+			},
+			{
+				"name": "DeliveryCoordinator",
+				"type": "char"
+			},
+			{
+				"name": "DeliveryTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DeliveryCoordinatorUserProfile",
+				"type": "char"
+			},
+			{
+				"name": "DeliveryStatus",
+				"type": "char"
+			},
+			{
+				"name": "DeliveryConfirmDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "VATStatus",
+				"type": "char"
+			},
+			{
+				"name": "VATCode",
+				"type": "char"
+			},
+			{
+				"name": "VATRegistrationNo",
+				"type": "varchar"
+			},
+			{
+				"name": "DistributorVATRegNo",
+				"type": "varchar"
+			},
+			{
+				"name": "NBTRegNo",
+				"type": "varchar"
+			},
+			{
+				"name": "TaxCodeRate",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "RDInvoiceHeader"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

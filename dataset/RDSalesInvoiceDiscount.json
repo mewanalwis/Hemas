@@ -1,0 +1,181 @@
+{
+	"name": "RDSalesInvoiceDiscount",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "SalesCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "InvoiceDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Sequence",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DiscountReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "DiscountCriteriaType",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DiscountCriteria",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "DiscountQty",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "DiscountedProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscountSchemeCode",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscountPercent",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "InvoiceLineNumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DiscountType",
+				"type": "char"
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DiscountCriteriaLevel",
+				"type": "varchar"
+			},
+			{
+				"name": "StandardCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "AverageCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "FIFOCostValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "WarehouseCode",
+				"type": "char"
+			},
+			{
+				"name": "LocationCode",
+				"type": "char"
+			},
+			{
+				"name": "OriginalDiscountProduct",
+				"type": "varchar"
+			},
+			{
+				"name": "OriginalDiscountQty",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OriginalDiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "Price",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "TradeSchemeDetailRecID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TradeSchemeCode",
+				"type": "char"
+			},
+			{
+				"name": "TradeSchemeRecID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "SalesInvoiceDiscount"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,99 @@
+{
+	"name": "RDSalesInvoiceHeaderDiscount",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "TerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "SalesCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "InvoiceNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "InvoiceLineNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscountCriteriaLevel",
+				"type": "varchar"
+			},
+			{
+				"name": "DiscountValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "DiscountPercent",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "FreeProductCode",
+				"type": "varchar"
+			},
+			{
+				"name": "FreeIssueValue",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "FreeIssueQty",
+				"type": "decimal",
+				"precision": 13,
+				"scale": 2
+			},
+			{
+				"name": "FreeIssuePrecentage",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "Sequence",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "SalesInvoiceHeaderDiscount"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

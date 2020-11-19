@@ -1,0 +1,20 @@
+{
+	"name": "RDSTG_SAP_ACDOCA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HEMAS_DW_STG",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SAP_Staging_Dest"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SAP",
+			"table": "ACDOCA_Costs"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

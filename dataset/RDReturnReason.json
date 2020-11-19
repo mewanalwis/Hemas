@@ -1,0 +1,74 @@
+{
+	"name": "RDReturnReason",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "ModuleCode",
+				"type": "char"
+			},
+			{
+				"name": "ReturnReasonCode",
+				"type": "char"
+			},
+			{
+				"name": "ReturnType",
+				"type": "char"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "LastUpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "LastUpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "ReturnReason"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

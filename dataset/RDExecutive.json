@@ -1,0 +1,287 @@
+{
+	"name": "RDExecutive",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hemas_RD_DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SourceDataSets"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RecID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BusinessUnit",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveCode",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveName",
+				"type": "varchar"
+			},
+			{
+				"name": "OperationType",
+				"type": "char"
+			},
+			{
+				"name": "Password",
+				"type": "char"
+			},
+			{
+				"name": "DefaultSalesCategoryCode",
+				"type": "char"
+			},
+			{
+				"name": "DefaultSalesWarehouse",
+				"type": "char"
+			},
+			{
+				"name": "DefaultSalesLocation",
+				"type": "char"
+			},
+			{
+				"name": "ExecutiveGroup",
+				"type": "char"
+			},
+			{
+				"name": "HierachyType",
+				"type": "char"
+			},
+			{
+				"name": "AuthorityLevel",
+				"type": "char"
+			},
+			{
+				"name": "PrimaryTerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "HHUCode",
+				"type": "char"
+			},
+			{
+				"name": "PasswordReset",
+				"type": "char"
+			},
+			{
+				"name": "DSNName",
+				"type": "varchar"
+			},
+			{
+				"name": "LastRetailerNo",
+				"type": "varchar"
+			},
+			{
+				"name": "Path",
+				"type": "varchar"
+			},
+			{
+				"name": "CreditLimitValidation",
+				"type": "char"
+			},
+			{
+				"name": "CreditLimit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "PasswordExpiry",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BankingFrequency",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SurveyActiveDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SurveyRecurrence",
+				"type": "char"
+			},
+			{
+				"name": "LastSurveyDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CashLimit",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "LastGRNNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "LastOrderNo",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CreatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UpdatedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "Status",
+				"type": "char"
+			},
+			{
+				"name": "TimeStamp",
+				"type": "timestamp"
+			},
+			{
+				"name": "DefaultStockWarehouse",
+				"type": "char"
+			},
+			{
+				"name": "DefaultStockLocation",
+				"type": "char"
+			},
+			{
+				"name": "DefaultReturnWarehouse",
+				"type": "char"
+			},
+			{
+				"name": "DefaultReturnLocation",
+				"type": "char"
+			},
+			{
+				"name": "DefaultInspectionWarehouse",
+				"type": "char"
+			},
+			{
+				"name": "DefaultInspectionLocation",
+				"type": "char"
+			},
+			{
+				"name": "StockTerritoryCode",
+				"type": "char"
+			},
+			{
+				"name": "DownloadStatus",
+				"type": "char"
+			},
+			{
+				"name": "DownloadDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FieldProIntPath",
+				"type": "varchar"
+			},
+			{
+				"name": "FieldProIntRemotePath",
+				"type": "varchar"
+			},
+			{
+				"name": "DefaultSpecialWarehouse",
+				"type": "char"
+			},
+			{
+				"name": "DefaultSpecialLocation",
+				"type": "char"
+			},
+			{
+				"name": "RecipientNumbers",
+				"type": "varchar"
+			},
+			{
+				"name": "DefaulEmptyTransactionCategory",
+				"type": "char"
+			},
+			{
+				"name": "IncentiveSchemeGroup",
+				"type": "char"
+			},
+			{
+				"name": "EncryptedPassword",
+				"type": "varchar"
+			},
+			{
+				"name": "UserLocked",
+				"type": "char"
+			},
+			{
+				"name": "LockedBy",
+				"type": "varchar"
+			},
+			{
+				"name": "LockedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UserName",
+				"type": "varchar"
+			},
+			{
+				"name": "UserID",
+				"type": "varchar"
+			},
+			{
+				"name": "RetailerCreationType",
+				"type": "char"
+			},
+			{
+				"name": "DeviceIMEINumber",
+				"type": "varchar"
+			},
+			{
+				"name": "ValidateIMEINumber",
+				"type": "char"
+			},
+			{
+				"name": "RecipientEmailAddress",
+				"type": "varchar"
+			},
+			{
+				"name": "EnableGPSCapture",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "RD",
+			"table": "Executive"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,835 @@
+{
+	"name": "SourcetoStaging",
+	"properties": {
+		"activities": [
+			{
+				"name": "product classification",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "truncate stagings",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterGroup",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "MasterGroup",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterGroupDescription",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MasterGroupDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterGroupValue",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "MasterGroupValue",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterGroupValueDescription",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MasterGroupValueDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GroupType",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "GroupType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Status",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "CreatedOn",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CreatedBy",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "UpdatedOn",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "UpdatedBy",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeStamp",
+									"physicalType": "timestamp"
+								},
+								"sink": {
+									"name": "TimeStamp"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDPRoductClassification",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "stgProductClassification",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "truncate stagings",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_truncate_stagings]"
+				},
+				"linkedServiceName": {
+					"referenceName": "Hemas_DWH",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "retailer classfication",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "product classification",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RetailerCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RetailerCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterGroup",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "MasterGroup",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterGroupDescription",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MasterGroupDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterGroupValue",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "MasterGroupValue",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterGroupValueDescription",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MasterGroupValueDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "GroupType",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "GroupType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Status",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "CreatedOn",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CreatedBy",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "UpdatedOn",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "UpdatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "UpdatedBy",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeStamp",
+									"physicalType": "timestamp"
+								},
+								"sink": {
+									"name": "TimeStamp"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDRetailerClassification",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "stgRetailerClassfication",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "geography classification",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "retailer classfication",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "select ZONE.CountryCode, ZONE.CountryName, ZONE.ZoneCode, ZONE.ZoneDescription, ZONE.ZoneStatus\n\t\t, REGI_SREG_TETY.RegionCode, REGI_SREG_TETY.RegionDescription, REGI_SREG_TETY.RegionStatus\n\t\t, REGI_SREG_TETY.SubRegionCode, REGI_SREG_TETY.SubRegionDescription, REGI_SREG_TETY.SubRegionStatus\n\t\t\t,REGI_SREG_TETY.TerritoryCode, REGI_SREG_TETY.TerritoryDescription, REGI_SREG_TETY.TerritoryStatus\nfrom (SELECT [ParentMasterGroupValue] as CountryCode\n      ,[ParentMasterGroupValueDescription] as CountryName\n      ,[MasterGroupValue] as ZoneCode\n      ,[MasterGroupValueDescription] as ZoneDescription\n\t  ,[Status] as ZoneStatus\n\t\tFROM [XONTUSERVENTURA_ORG].[XA].[MasterDefinitionValue]\n\t\twhere [MasterGroup]='ZONE') ZONE\n\tleft join\n\t(Select REGI.ZoneCode, REGI.RegionCode, REGI.RegionDescription, REGI.RegionStatus\n\t\t, SREG_TETY.SubRegionCode, SREG_TETY.SubRegionDescription, SREG_TETY.SubRegionStatus\n\t\t\t,SREG_TETY.TerritoryCode, SREG_TETY.TerritoryDescription, SREG_TETY.TerritoryStatus\n\t\tFrom (SELECT [ParentMasterGroupValue] as ZoneCode\n\t\t,[MasterGroupValue] as RegionCode\n\t\t,[MasterGroupValueDescription] as RegionDescription\n\t\t,[Status] as RegionStatus\n\t\tFROM [XONTUSERVENTURA_ORG].[XA].[MasterDefinitionValue]\n\t\twhere [MasterGroup]='REGI') REGI\n\tleft join\n\t(Select SREG.RegionCode, SREG.SubRegionCode, SREG.SubRegionDescription, SREG.SubRegionStatus\n\t\t\t,TETY.TerritoryCode, TETY.TerritoryDescription, TETY.TerritoryStatus\n\t\tFrom (SELECT [ParentMasterGroupValue] as RegionCode\n\t\t,[MasterGroupValue] as SubRegionCode\n\t\t,[MasterGroupValueDescription] as SubRegionDescription\n\t\t,[Status] as SubRegionStatus\n\t\tFROM [XONTUSERVENTURA_ORG].[XA].[MasterDefinitionValue]\n\t\twhere [MasterGroup]='SREG' ) SREG\n\tleft join\n\t\t(SELECT [ParentMasterGroupValue] as SubRegionCode\n\t\t,[MasterGroupValue] as TerritoryCode\n\t\t,[MasterGroupValueDescription] as TerritoryDescription\n\t\t,[Status] as TerritoryStatus\n\t\tFROM [XONTUSERVENTURA_ORG].[XA].[MasterDefinitionValue]\n\t\twhere [MasterGroup]='TETY') TETY\n\ton SREG.SubRegionCode = TETY.SubRegionCode) SREG_TETY\n\ton REGI.RegionCode = SREG_TETY.RegionCode) REGI_SREG_TETY\n\ton ZONE.ZoneCode = REGI_SREG_TETY.ZoneCode\n",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "CountryCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "CountryCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CountryName",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CountryName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZoneCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "ZoneCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZoneDescription",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ZoneDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZoneStatus",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "ZoneStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RegionCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "RegionCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RegionDescription",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "RegionDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RegionStatus",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "RegionStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SubRegionCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "SubRegionCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SubRegionDescription",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "SubRegionDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SubRegionStatus",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "SubRegionStatus",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TerritoryCode",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "TerritoryCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TerritoryDescription",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "TerritoryDescription",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TerritoryStatus",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "TerritoryStatus",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDGeographyClassification",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "stgGeographyClassification",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "price list",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "geography classification",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "Select * From RD.PriceDetail",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "RecID",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "RecID",
+									"type": "Int32",
+									"physicalType": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "BusinessUnit",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PriceGroup",
+									"type": "String",
+									"physicalType": "char"
+								},
+								"sink": {
+									"name": "PriceGroup",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ProductCode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Quantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 13
+								},
+								"sink": {
+									"name": "Quantity",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "DateFrom",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "DateFrom",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "DateTo",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "DateTo",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Price",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								},
+								"sink": {
+									"name": "Price",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "PricePer",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 5
+								},
+								"sink": {
+									"name": "PricePer",
+									"type": "Decimal",
+									"physicalType": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "CreatedOn",
+									"type": "DateTime",
+									"physicalType": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CreatedBy",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CreatedBy",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TimeStamp",
+									"physicalType": "timestamp"
+								},
+								"sink": {
+									"name": "TimeStamp"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RDProduct",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "stgProductPriceList",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "DWPipelines"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-10-29T18:01:10Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
